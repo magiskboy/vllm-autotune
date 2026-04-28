@@ -36,8 +36,6 @@ if [[ ! -f "${BENCH_PARAMS_JSON}" ]]; then
 fi
 
 SERVE_CMD="vllm serve ${MODEL} \
-  --tensor-parallel-size 1 \
-  --gpu-memory-utilization 0.92 \
   --quantization fp8 \
   --kv-cache-dtype fp8_e4m3 \
   --max-model-len ${MAX_MODEL_LEN} \
@@ -45,10 +43,7 @@ SERVE_CMD="vllm serve ${MODEL} \
   --reasoning-parser qwen3"
 
 BENCH_CMD="vllm bench serve \
-  --backend vllm \
-  --model ${MODEL} \
-  --endpoint /v1/chat/completions \
-  --ignore-eos"
+  --model ${MODEL}
 
 echo "== Phase 1: coarse grid over max_num_seqs/max_num_batched_tokens =="
 vllm bench sweep serve \
