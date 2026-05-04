@@ -19,5 +19,5 @@ vllm bench sweep serve \
   --bench-params "./bench_params.json" \
   --num-runs 1 \
   --output-dir "./results" \
-  --experiment-name "qwen36_h100_prefill_heavy" \
+  --experiment-name "prefill_heavy" \
   --resume
