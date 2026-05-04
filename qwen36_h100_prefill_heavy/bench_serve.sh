@@ -43,7 +43,7 @@ SERVE_CMD="vllm serve ${MODEL} \
   --reasoning-parser qwen3"
 
 BENCH_CMD="vllm bench serve \
-  --model ${MODEL}
+  --model ${MODEL}"
 
 echo "== Phase 1: coarse grid over max_num_seqs/max_num_batched_tokens =="
 vllm bench sweep serve \
@@ -53,20 +53,5 @@ vllm bench sweep serve \
   --bench-params "${BENCH_PARAMS_JSON}" \
   --num-runs "${NUM_RUNS}" \
   --output-dir "${OUTPUT_DIR}" \
-  --experiment-name "${EXP_PREFIX}_grid"
-
-echo "== Phase 2: workload exploration (capacity curve) =="
-vllm bench sweep serve_workload \
-  --serve-cmd "${SERVE_CMD}" \
-  --bench-cmd "${BENCH_CMD}" \
-  --serve-params "${SERVE_PARAMS_JSON}" \
-  --bench-params "${BENCH_PARAMS_JSON}" \
-  --workload-var max_concurrency \
-  --workload-iters "${WORKLOAD_ITERS}" \
-  --num-runs "${NUM_RUNS}" \
-  --output-dir "${OUTPUT_DIR}" \
-  --experiment-name "${EXP_PREFIX}_workload"
-
-echo "Done."
-echo "Grid summary:     ${OUTPUT_DIR}/${EXP_PREFIX}_grid/summary.csv"
-echo "Workload summary: ${OUTPUT_DIR}/${EXP_PREFIX}_workload/summary.csv"
+  --experiment-name "${EXP_PREFIX}_grid" \
+  --resume

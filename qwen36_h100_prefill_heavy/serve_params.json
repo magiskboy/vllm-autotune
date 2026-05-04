@@ -1,0 +1,22 @@
+[
+  {
+    "_benchmark_name": "s01",
+    "max_num_seqs": 64,
+    "max_num_batched_tokens": 8192
+  },
+  {
+    "_benchmark_name": "s02",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 8192
+  },
+  {
+    "_benchmark_name": "s01",
+    "max_num_seqs": 64,
+    "max_num_batched_tokens": 16384
+  },
+  {
+    "_benchmark_name": "s01",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 16384
+  }
+]
