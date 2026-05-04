@@ -19,4 +19,4 @@ vllm bench sweep serve \
   --bench-params "./bench_params.json" \
   --num-runs 1 \
   --output-dir "./results" \
-  --experiment-name "prefill_heavy"
+  --experiment-name "512_1024_65536_131072"
