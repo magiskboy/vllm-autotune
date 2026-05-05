@@ -7,6 +7,7 @@ SERVE_CMD="vllm serve ${MODEL} \
   --quantization fp8 \
   --kv-cache-dtype fp8_e4m3 \
   --reasoning-parser qwen3 \
+  --async-scheduling \
   --gpu-memory-utilization 0.92"
 
 BENCH_CMD="vllm bench serve \
