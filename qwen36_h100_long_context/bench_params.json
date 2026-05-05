@@ -1,0 +1,9 @@
+[
+  {
+    "_benchmark_name": "agent_long_context",
+    "dataset_name": "sharegpt",
+    "random_input_len": 20000,
+    "random_output_len": 5000,
+    "num_prompts": 500
+  }
+]

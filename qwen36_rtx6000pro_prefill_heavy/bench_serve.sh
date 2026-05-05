@@ -18,5 +18,6 @@ vllm bench sweep serve \
   --serve-params "./serve_params.json" \
   --bench-params "./bench_params.json" \
   --num-runs 1 \
+  --server-ready-timeout 3000 \
   --output-dir "./results" \
   --experiment-name "512_1024_65536_131072"

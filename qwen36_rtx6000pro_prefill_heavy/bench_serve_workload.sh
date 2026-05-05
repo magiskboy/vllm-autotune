@@ -20,5 +20,6 @@ vllm bench sweep serve_workload \
   --workload-var max_concurrency \
   --workload-iters 10 \
   --num-runs 2 \
+  --server-ready-timeout 3000 \
   --output-dir "./results" \
   --experiment-name "workload"
