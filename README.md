@@ -55,3 +55,9 @@ Như trong hình là 2 biểu đồ giữa max conccurency - token thoughput và
 1. Max conccurency từ 1 - 75 là điểm chưa bão hòa do thoughput và TTFT vẫn tương quan mạnh
 2. Từ 176 trở đi, tuy thoughtput tăng nhưng TTFT tăng mạnh (có thể tradoff). Tuy nhiên, còn 1 điểm là ở vùng này, độ biến thiên lớn --> không ổn định SLA.
 3. Có thể chọn max conccurency trong vùng từ 80 - 150 để làm SLA.
+
+**Một số lưu ý**
+
+- max_num_seqs: là số lượng request được xử lí đồng thời (nếu token budget còn). Cấu hình này chủ yếu làm tăng số lượng request được decoding, dẫn tới memory bound (chứng minh là con số này trên H100 nhỏ hơn RTX 6000 Pro do VRAM trên RTX 6000 Pro lớn hơn H100)
+
+- max_num_batch_tokens: là số token được xử lí trong 1 iteration, liên quan trực tiếp tới khả năng tính toán của GPU (chứng minh là trên H100, con số này lớn hơn RTX 6000 Pro do số Tensor core của H100 lớn hơn).

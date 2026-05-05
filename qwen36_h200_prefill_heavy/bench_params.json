@@ -1,0 +1,9 @@
+[
+  {
+    "_benchmark_name": "agent_long_context",
+    "dataset_name": "random",
+    "random_input_len": 16384,
+    "random_output_len": 4096,
+    "num_prompts": 500
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "_benchmark_name": "s01",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 32768
+  },
+  {
+    "_benchmark_name": "s02",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 49152
+  },
+  {
+    "_benchmark_name": "s03",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 65536
+  },
+  {
+    "_benchmark_name": "s04",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 81920
+  },
+  {
+    "_benchmark_name": "s05",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 98304
+  },
+  {
+    "_benchmark_name": "s06",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 114688
+  }
+]
