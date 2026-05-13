@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 == '' ]
+if [ "$1" == "" ]; then
     vllm serve "Qwen/Qwen3.6-35B-A3B-FP8" \
       --max-num-seqs 256 \
       --max-num-batched-tokens 32768 \
